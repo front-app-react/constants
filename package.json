@@ -1,6 +1,6 @@
 {
   "name": "@front-app-react/constants",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "description": "package constant bindings for using applications",
   "keywords": [

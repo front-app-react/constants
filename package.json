@@ -1,0 +1,39 @@
+{
+  "name": "@front-app-react/constants",
+  "version": "1.0.5",
+  "private": false,
+  "description": "package constant bindings for using applications",
+  "keywords": [
+    "js",
+    "utils",
+    "module",
+    "react",
+    "styled-components",
+    "object",
+    "color",
+    "style",
+    "css",
+    "translator"
+  ],
+  "author": "Mahdi Ahmad Khan Beigi <mahdi.khanbeigi@yahoo.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/front-app-react/constants"
+  },
+  "peerDependenciese": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "dependencies": {
+    "deepmerge": "^4.3.1"
+  },
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "types": "types/src/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "**"
+  ]
+}

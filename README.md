@@ -6,6 +6,10 @@ package constant bindings for using applications
 
 demo for using [demo-front-app-react](https://github.com/mahdikhanbeigi/demo-front-app-react)
 
+## Installing
+
+`npm i @front-app-react/constants`
+
 ## Packages
 
 List of packages used:

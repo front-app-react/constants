@@ -1,0 +1,58 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Set tag
+        id: tag
+        run: |
+          tag=v$(npm version patch --no-git-tag-version)
+          git tag $tag
+          echo "::set-output name=tag::$tag"
+
+      - name: Create new branch
+        run: git checkout -b release-$(date +%Y%m%d-%H%M%S)
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release-$(date +%Y%m%d-%H%M%S)
+
+  release:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get tag
+        run: echo ${{ needs.build.outputs.tag }}
+        id: get_tag
+
+      - name: Create release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ steps.get_tag.outputs.stdout }}
+          release_name: Release ${{ steps.get_tag.outputs.stdout }}
+          body: |
+            This is the latest release of the project.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -4,7 +4,7 @@ package constant bindings for using applications
 
 ## Demo
 
-demo for using [demo-front-app-react](https://github.com/mahdikhanbeigi/demo-front-app-react)
+demo for using [demo-front-app-react](https://mahdikhanbeigi.github.io/demo-front-app-react/)
 
 ## Installing
 

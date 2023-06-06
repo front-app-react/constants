@@ -1,6 +1,6 @@
 {
   "name": "@front-app-react/constants",
-  "version": "1.1.2",
+  "version": "1.1.1",
   "private": false,
   "description": "package constant bindings for using applications",
   "keywords": [
@@ -25,7 +25,7 @@
   },
   "main": "lib/src/index.min.js",
   "module": "lib/src/index.es.min.js",
-  "types": "lib/src/index.d.ts",
+  "types": "lib/src/index.min.d.ts",
   "scripts": {
     "build:tsc": "tsc",
     "build": "app-rollup-cli --config rollup/config.json"
